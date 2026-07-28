@@ -34,7 +34,7 @@ const SAMPLE = `# Cite与人类搭档日常🐱
 
 </div>
 <div style="flex-shrink:0; width:42%; max-width:220px;">
-<img src="/bg1.png" style="width:100%; opacity:0.3; display:block;" />
+<img src="${import.meta.env.BASE_URL}bg1.png" style="width:100%; opacity:0.3; display:block;" />
 </div>
 </div>
 
@@ -42,7 +42,7 @@ const SAMPLE = `# Cite与人类搭档日常🐱
 
 <div style="display:flex; align-items:center; gap:110px; padding:8px 0;">
 <div style="flex-shrink:0; width:42%; max-width:220px;">
-<img src="/bg2.png" style="width:100%; opacity:0.3; display:block;" />
+<img src="${import.meta.env.BASE_URL}bg2.png" style="width:100%; opacity:0.3; display:block;" />
 </div>
 <div style="flex-shrink:0; font-size:15px; line-height:1.75;">
 
@@ -323,7 +323,7 @@ function App() {
       <header className="header">
         <div className="flex items-center gap-3">
           <div className="logo-icon">
-            <img src="/logo.png" alt="logo" className="logo-img" />
+            <img src={`${import.meta.env.BASE_URL}logo.png`} alt="logo" className="logo-img" />
           </div>
           <div>
             <h1 className="text-lg font-bold text-gray-800">首席助手Cite工具包</h1>

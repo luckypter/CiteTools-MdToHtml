@@ -1,15 +1,25 @@
-# Wonderland — Markdown 转公众号 HTML
+# 首席助手 Cite 工具包 — MtoH
 
-一款简洁优雅的本地工具，帮助你将 Markdown 内容一键转换为适合微信公众号发布的 HTML，并支持从已有公众号文章中提取排版模板。
+将 Markdown 实时转换为公众号排版，左边编写，右边预览，一键复制到微信公众平台。
 
-## 功能
+## 功能特性
 
-- **Markdown 实时预览**：左侧编辑 Markdown，右侧即时渲染公众号样式。
-- **多主题切换**：内置 6 款精心设计的主题（蓝色系、深蓝系、沙滩系、奶茶系、玉林系、琥珀系）。
-- **导出 & 复制**：一键导出完整 HTML 文件，或直接复制带样式的 HTML 片段。
-- **公众号模板提取**：粘贴公众号文章源码，自动分析主色、强调色、标题样式、正文字体等，生成自定义主题。
+- **实时预览**：左侧编写 Markdown，右侧同步渲染公众号样式
+- **工具栏**：一键插入标题、加粗、斜体、引用、列表、链接、图片、代码块等语法
+- **内联格式**：选中文字可快速设置字号、颜色、行距、段落间距
+- **一键复制**：生成适配公众号的 HTML 代码，可直接粘贴至微信后台
+- **样式定制**：支持自定义字号、字体颜色、行高、段前段后间距
 
-## 开始使用
+## 技术栈
+
+- React 18 + Vite 5
+- Tailwind CSS
+- marked（Markdown 解析）
+- turndown（HTML 转 Markdown）
+- DOMPurify（XSS 过滤）
+- Lucide React（图标）
+
+## 本地开发
 
 ```bash
 # 安装依赖
@@ -17,26 +27,35 @@ npm install
 
 # 启动开发服务器
 npm run dev
+
+# 生产构建
+npm run build
+
+# 预览构建产物
+npm run preview
 ```
 
-打开浏览器访问 http://localhost:3000 即可使用。
+## 部署到 GitHub Pages
 
-## 使用说明
+```bash
+npm run deploy
+```
 
-### Markdown 转 HTML
-1. 在左侧编辑器输入 Markdown。
-2. 从顶部主题下拉框选择喜欢的样式。
-3. 点击「复制内容」或「导出 HTML」获取结果。
+## 项目结构
 
-### 提取公众号模板
-1. 切换到「提取公众号模板」标签。
-2. 粘贴公众号文章网页源码（可通过浏览器「查看网页源代码」获得）。
-3. 点击「开始分析」，查看提取的主色、强调色、元素统计。
-4. 点击「保存为我的主题并应用」，即可在 Markdown 转换中使用该模板。
+```
+md-to-wechat/
+├── public/            # 静态资源（图片等）
+├── src/
+│   ├── themes/        # 主题配置
+│   ├── utils/         # Markdown 解析、模板提取工具
+│   ├── App.jsx        # 主应用组件
+│   ├── main.jsx       # 入口文件
+│   └── index.css      # 全局样式
+├── vite.config.js     # Vite 配置
+└── package.json
+```
 
-## 技术栈
+## License
 
-- React + Vite
-- Tailwind CSS
-- marked（Markdown 解析）
-- DOMPurify（HTML 净化）
+MIT
