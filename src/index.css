@@ -1,0 +1,349 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* { box-sizing: border-box; }
+
+html, body, #root { height: 100%; margin: 0; padding: 0; }
+
+body {
+  font-family: 'PingFang SC', 'Hiragino Sans GB', system-ui, -apple-system, sans-serif;
+  background: #fff;
+  color: #333;
+}
+
+/* ---- Layout ---- */
+.app-container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 24px;
+  border-bottom: 1px solid #eee;
+}
+
+.logo-icon {
+  width: 40px; height: 40px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.logo-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.main-area {
+  flex: 1;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1px;
+  background: #eee;
+  min-height: 0;
+  overflow: hidden;
+}
+
+/* ---- Panel ---- */
+.panel {
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.panel-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 16px;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.panel-footer {
+  padding: 8px 16px;
+  border-top: 1px solid #f0f0f0;
+  font-size: 12px;
+  color: #999;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* ---- Toolbar ---- */
+.toolbar {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  padding: 6px 12px;
+  border-bottom: 1px solid #f0f0f0;
+  flex-wrap: wrap;
+}
+
+.toolbar-btn {
+  width: 32px;
+  height: 32px;
+  border-radius: 6px;
+  border: none;
+  background: transparent;
+  color: #666;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.toolbar-btn:hover {
+  background: #f5f5f5;
+  color: #333;
+}
+
+.toolbar-btn:active {
+  background: #eee;
+}
+
+.toolbar-divider {
+  width: 1px;
+  height: 20px;
+  background: #e8e8e8;
+  margin: 0 4px;
+}
+
+.toolbar-btn-format {
+  color: #1a6fb5;
+}
+
+.toolbar-btn-format:hover {
+  background: #f0f7ff;
+  color: #155d96;
+}
+
+.toolbar-btn-clear {
+  color: #999;
+}
+
+.toolbar-btn-clear:hover {
+  background: #fff0f0;
+  color: #d44;
+}
+
+/* ---- Editor ---- */
+.editor-body {
+  flex: 1;
+  padding: 16px;
+  overflow: hidden;
+}
+
+.editor-textarea {
+  font-family: 'JetBrains Mono', 'SF Mono', Menlo, Consolas, monospace;
+  font-size: 14px;
+  line-height: 1.7;
+  resize: none;
+  outline: none;
+  border: none;
+  background: transparent;
+  width: 100%;
+  height: 100%;
+  color: #333;
+}
+
+.editor-textarea::placeholder { color: #ccc; }
+
+/* ---- Preview ---- */
+.preview-body {
+  flex: 1;
+  padding: 24px;
+  overflow: auto;
+  background: #fff;
+}
+
+.preview-content {
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+.preview-content h1,
+.preview-content h2,
+.preview-content h3,
+.preview-content h4,
+.preview-content h5,
+.preview-content h6 {
+  font-weight: 600;
+  margin: 1.4em 0 0.6em;
+  line-height: 1.4;
+}
+
+.preview-content h1 {
+  font-size: 1.7em;
+  text-align: center;
+  border-bottom: 2px solid #333;
+  padding-bottom: 0.4em;
+}
+
+.preview-content h2 {
+  font-size: 1.4em;
+  border-left: 4px solid #333;
+  padding-left: 12px;
+}
+
+.preview-content h3 { font-size: 1.2em; }
+
+.preview-content p {
+  margin: 1em 0;
+  line-height: 1.85;
+}
+
+.preview-content blockquote {
+  margin: 1.2em 0;
+  padding: 0.8em 1em;
+  border-left: 4px solid #ddd;
+  background: #f9f9f9;
+  border-radius: 0 4px 4px 0;
+}
+
+.preview-content code {
+  background: #f5f5f5;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.92em;
+}
+
+.preview-content pre {
+  background: #2d2d2d;
+  color: #f8f8f2;
+  padding: 1em;
+  border-radius: 8px;
+  overflow-x: auto;
+  line-height: 1.5;
+}
+
+.preview-content pre code {
+  background: transparent;
+  padding: 0;
+  color: inherit;
+}
+
+.preview-content ul, .preview-content ol {
+  padding-left: 1.6em;
+  margin: 1em 0;
+}
+
+.preview-content li {
+  margin: 0.4em 0;
+  line-height: 1.8;
+}
+
+.preview-content img {
+  max-width: 100%;
+  display: block;
+  margin: 1em auto;
+  border-radius: 6px;
+}
+
+.preview-content table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.2em 0;
+}
+
+.preview-content th, .preview-content td {
+  border: 1px solid #ddd;
+  padding: 8px 12px;
+  text-align: left;
+}
+
+.preview-content th {
+  background: #f5f5f5;
+  font-weight: 600;
+}
+
+.preview-content hr {
+  border: none;
+  border-top: 1px solid #eee;
+  margin: 2em 0;
+}
+
+.preview-content a {
+  color: #333;
+  text-decoration: underline;
+}
+
+/* ---- Buttons ---- */
+.btn-primary {
+  background: #333;
+  color: #fff;
+  padding: 8px 18px;
+  border-radius: 8px;
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.2s;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.btn-primary:hover {
+  background: #555;
+}
+
+.btn-outline {
+  background: #fff;
+  color: #333;
+  padding: 8px 18px;
+  border-radius: 8px;
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.2s;
+  border: 1px solid #ddd;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.btn-outline:hover {
+  border-color: #333;
+  background: #fafafa;
+}
+
+/* ---- Scrollbar ---- */
+.scroll-thin::-webkit-scrollbar { width: 6px; height: 6px; }
+.scroll-thin::-webkit-scrollbar-thumb { background: #ddd; border-radius: 3px; }
+.scroll-thin::-webkit-scrollbar-track { background: transparent; }
+
+/* ---- Toast ---- */
+.toast {
+  position: fixed;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 10px 20px;
+  background: #333;
+  color: #fff;
+  font-size: 13px;
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  animation: toast-in 0.3s ease;
+}
+
+@keyframes toast-in {
+  from { opacity: 0; transform: translateX(-50%) translateY(10px); }
+  to { opacity: 1; transform: translateX(-50%) translateY(0); }
+}
