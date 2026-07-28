@@ -1,11 +1,11 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 
-export default defineConfig({
-  base: '/CiteTools-MdToHtml/',
+export default defineConfig(({ command }) => ({
+  base: command === 'build' ? '/CiteTools-MdToHtml/' : '/',
   plugins: [react()],
   server: {
     port: 3000,
     host: true
   }
-})
+}))
