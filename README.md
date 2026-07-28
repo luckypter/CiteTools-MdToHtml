@@ -1,6 +1,9 @@
 # 首席助手 Cite 工具包 — MdToHtml
 
 将 Markdown 实时转换为公众号排版，左边编写，右边预览，一键复制到微信公众平台。
+
+[![Static Badge](https://img.shields.io/badge/%F0%9F%90%B1-QuickStart-green?style=flat-square&logo=pipecat&label=Cite&labelColor=abcdef&color=fedcba)](https://luckypter.github.io/CiteTools-MdToHtml/)
+
 <img width="1146" height="610" alt="d3a7d678bfda24f2dca6fafaa53ac8da" src="https://github.com/user-attachments/assets/b410aa0a-f276-4769-b3ce-9bdec919af6f" />
 
 ## 功能特性
